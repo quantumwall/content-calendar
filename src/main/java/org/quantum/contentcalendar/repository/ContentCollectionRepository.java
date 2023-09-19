@@ -24,6 +24,10 @@ public class ContentCollectionRepository {
     public Optional<Content> findById(Integer id) {
 	return contentList.stream().filter(c -> c.id().equals(id)).findAny();
     }
+    
+    public void save(Content content) {
+	contentList.add(content);
+    }
 
     @PostConstruct
     private void init() {
