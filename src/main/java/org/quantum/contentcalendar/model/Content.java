@@ -2,7 +2,9 @@ package org.quantum.contentcalendar.model;
 
 import java.time.LocalDateTime;
 
-public record Content(Integer id, String title, String description, Status status, Type type, LocalDateTime dateCreated,
-	LocalDateTime dateUpdated, String url) {
+import jakarta.validation.constraints.NotBlank;
+
+public record Content(Integer id, @NotBlank String title, String description, Status status, Type type,
+	LocalDateTime dateCreated, LocalDateTime dateUpdated, String url) {
 
 }

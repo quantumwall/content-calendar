@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/content")
 public class ContentController {
@@ -38,7 +40,7 @@ public class ContentController {
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    public void create(@RequestBody Content content) {
+    public void create(@Valid @RequestBody Content content) {
 	contentRepository.save(content);
     }
 
