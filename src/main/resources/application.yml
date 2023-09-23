@@ -1,8 +1,8 @@
 spring:
-  h2:
-    console:
-      enabled: true
-  datasource:
-    generate-unique-name: false
-    name: content
+  profiles:
+    active:
+    - dev
+#    - prod
+    
+
     

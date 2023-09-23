@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: postgres
+    password: password
+    url: jdbc:postgresql://localhost:5432/postgres
+  sql:
+    init:
+      mode: always
+    
+cc:
+  message: Welcome to production
+  about: This is the content calendar rest app

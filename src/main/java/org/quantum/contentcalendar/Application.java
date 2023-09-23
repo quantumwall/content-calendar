@@ -2,6 +2,7 @@ package org.quantum.contentcalendar;
 
 import java.time.LocalDateTime;
 
+import org.quantum.contentcalendar.config.CalendarProperties;
 import org.quantum.contentcalendar.model.Content;
 import org.quantum.contentcalendar.model.Status;
 import org.quantum.contentcalendar.model.Type;
@@ -9,9 +10,11 @@ import org.quantum.contentcalendar.repository.ContentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableConfigurationProperties(CalendarProperties.class)
 public class Application {
 
     public static void main(String[] args) {
