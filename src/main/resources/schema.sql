@@ -9,5 +9,5 @@ create table if not exists content (
 	url varchar(255)
 );
 
-insert into content (title, description, status, type, date_created)
-values ('Spring data demo', 'First data demo', 'IDEA', 'IN_PROGRESS', CURRENT_TIMESTAMP);
+--insert into content (title, description, status, type, date_created)
+--values ('Spring data demo', 'First data demo', 'IDEA', 'IN_PROGRESS', CURRENT_TIMESTAMP);

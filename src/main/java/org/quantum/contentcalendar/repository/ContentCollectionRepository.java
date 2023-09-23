@@ -8,11 +8,9 @@ import java.util.Optional;
 import org.quantum.contentcalendar.model.Content;
 import org.quantum.contentcalendar.model.Status;
 import org.quantum.contentcalendar.model.Type;
-import org.springframework.stereotype.Repository;
 
 import jakarta.annotation.PostConstruct;
 
-@Repository
 public class ContentCollectionRepository {
 
     private final List<Content> contentList = new ArrayList<>();

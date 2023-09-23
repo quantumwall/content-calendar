@@ -3,7 +3,7 @@ package org.quantum.contentcalendar.controller;
 import java.util.List;
 
 import org.quantum.contentcalendar.model.Content;
-import org.quantum.contentcalendar.repository.ContentCollectionRepository;
+import org.quantum.contentcalendar.repository.ContentRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +22,9 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/content")
 public class ContentController {
 
-    private final ContentCollectionRepository contentRepository;
+    private final ContentRepository contentRepository;
 
-    public ContentController(ContentCollectionRepository contentRepository) {
+    public ContentController(ContentRepository contentRepository) {
 	this.contentRepository = contentRepository;
     }
 
@@ -54,9 +54,7 @@ public class ContentController {
     @DeleteMapping("/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Integer id) {
-	if (!contentRepository.delete(id)) {
-	    throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-	}
+	contentRepository.deleteById(id);
     }
 
 }
